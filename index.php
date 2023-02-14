@@ -7,25 +7,34 @@
     <title>Ata</title>
 </head>
 <body>
+    <a href="?page=home">home</a>
+    <a href="?page=tabuada">Tabuada</a>
+    <a href="?page=Sobre">Sobre</a>
+    <a href="?page=CalcIMC">Calcule IMC</a>
+    <a href="?page=CalcViagem"> Calcular Custo da viagem</a>
 
-    <a href="?page=1">Página 1</a>
-    <a href="?page=2">Página 2</a>
-    <a href="?page=3">Página 3</a>
-    
     <?php
-    
+
     if(isset($_GET['page'])){
         $page = $_GET['page'];
         switch($page){
-            case'1';
-            require_once ('./Pages/Page1.php');
+            case'home';
+            require_once ('./index.php');
             break;
-            case'2';
-            require_once ('./Pages/Page2.php');
+            case'tabuada';
+            require_once ('./Pages/Tabuada.php');
             break;
-            case'3';
-            require_once ('./Pages/Page3.php');
+            case'Sobre';
+            require_once ('./Pages/Sobre.php');
             break;
+            case'CalcIMC';
+            require_once ('./Pages/CalcIMC.php');
+            break;
+            case'CalcViagem';
+            require_once ('./Pages/CalcViagem.php');
+            break;
+            default:
+            echo 'página não encontrada';
         }
     }
         
