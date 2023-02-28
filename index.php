@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ata</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Atividade</title>
 </head>
 <body>
-    <a href="?page=home">home</a>
-    <a href="?page=tabuada">Tabuada</a>
-    <a href="?page=Sobre">Sobre</a>
-    <a href="?page=CalcIMC">Calcule IMC</a>
-    <a href="?page=CalcViagem"> Calcular Custo da viagem</a>
+   
+    <nav id="menu">
+    <ul> 
+      <li><a href="?page=home">Home</a></li>
+      <li><a href="?page=tabuada">Tabuada</a></li>
+      <li><a href="?page=Sobre">Sobre</a></li>
+      <li><a href="?page=CalcIMC">Calcule IMC</a></li>
+      <li><a href="?page=CalcViagem"> Calcular Custo da viagem</a></li>
+    </ul>
+  </nav>
+
+
 
     <?php
 
     if(isset($_GET['page'])){
         $page = $_GET['page'];
         switch($page){
+            case'';
+            require_once ('./Pages/Page404.php');
+            break;
             case'home';
-            require_once ('./index.php');
+            require_once ('./Pages/Home.php');
             break;
             case'tabuada';
             require_once ('./Pages/Tabuada.php');
