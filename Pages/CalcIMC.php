@@ -12,7 +12,7 @@
 <?php
     if(isset($_POST['x'], $_POST['y'])){
         $x = $_POST['x'];
-        $y = $_POST['y'];
+        $y = $_POST['y'] / 100;
         $resultado = $x / ($y*$y);
         echo"<h3>$resultado</h3>";
             
