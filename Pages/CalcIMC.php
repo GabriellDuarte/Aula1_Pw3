@@ -15,7 +15,20 @@
         $y = $_POST['y'] / 100;
         $resultado = $x / ($y*$y);
         echo"<h3>$resultado</h3>";
-            
+     
+        if($resultado <=20){
+            echo "A pessoa está abaixo do peso <br>";
+        }
+
+        else if($resultado <=30){
+            echo "A pessoa está na média, peso normal <br>";
+        }
+
+        else  if($resultado > 30){
+            echo "A pessoa está acima do peso <br>";
+        }
+
+        
     }
 
 ?>
